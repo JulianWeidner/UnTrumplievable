@@ -3,6 +3,10 @@ class FakersController < ApplicationController
     @fakers = Faker.new
   end
 
+  def new
+    @faker = Faker.new
+  end
+ 
 
 
   private 
