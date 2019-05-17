@@ -1,0 +1,7 @@
+<footer>
+  <% if logged_in?%>
+    <p><%= current_user.email%><p>
+  <% else %>
+    <p>Not Logged in</p>
+  <%end%>  
+</footer>

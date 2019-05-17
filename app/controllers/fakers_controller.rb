@@ -6,6 +6,12 @@ class FakersController < ApplicationController
   def new
     @faker = Faker.new
   end
+
+  def create
+    @faker = Faker.new(faker_params)
+    @faker.save
+    redirect_back_or_to(root_path)
+  end
  
 
 
