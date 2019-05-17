@@ -8,6 +8,7 @@ class FakerSessionsController < ApplicationController
 
     if @faker
       redirect_back_or_to(:fakers, notice: "Login Successful")
+      session[:current_user_id] = @faker.id
     else
       flash.now[:alert] = "Login Failed"
       render action: 'new'

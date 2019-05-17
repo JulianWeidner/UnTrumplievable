@@ -12,6 +12,12 @@ class FakersController < ApplicationController
     @faker.save
     redirect_back_or_to(root_path)
   end
+
+  def destroy
+    @faker = Faker.find(session[:current_user_id])
+    @faker.destroy 
+    redirect_to(root_path)
+  end
  
 
 
