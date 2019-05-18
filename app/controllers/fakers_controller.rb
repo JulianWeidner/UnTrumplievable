@@ -10,7 +10,8 @@ class FakersController < ApplicationController
   def create
     @faker = Faker.new(faker_params)
     @faker.save
-    redirect_back_or_to(root_path)
+    redirect_back_or_to(login_path)
+  
   end
 
   def destroy
