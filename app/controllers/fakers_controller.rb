@@ -17,6 +17,7 @@ class FakersController < ApplicationController
   def show
     @faker = Faker.find(session[:current_user_id])
     @faketweet = Faketweet.new
+    @faketweets = @faker.faketweets.all
     @faketweet.faker_id = session[:current_user_id]
   end
 
