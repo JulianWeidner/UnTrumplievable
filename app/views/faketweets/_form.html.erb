@@ -1,0 +1,24 @@
+<h3>Create Fake Tweet</h3>
+<%= image_tag 'donnie' %>
+<p>@theRealDonaldTrump</p>
+<%= form_for [ @faker, @faketweet ] do |f| %>
+  <p>
+    <%= f.label :body %><br/>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :tweet_time  %>
+    <%= f.text_field :tweet_time  %>
+  </p>
+  <p>
+    <%= f.label :retweets  %>
+    <%= f.text_field :retweets  %>
+  </p>
+  <p>
+    <%= f.label :favorites  %>
+    <%= f.text_field :favorites %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>

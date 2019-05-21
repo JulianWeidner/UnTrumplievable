@@ -7,7 +7,7 @@ class FakerSessionsController < ApplicationController
     @faker = login(params[:email], params[:password])
 
     if @faker
-      redirect_back_or_to(:fakers, notice: "Login Successful")
+      redirect_back_or_to(faker_path(@faker), notice: "Login Successful")
       session[:current_user_id] = @faker.id
     else
       flash.now[:alert] = "Login Failed"
