@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_16_180246) do
+ActiveRecord::Schema.define(version: 2019_05_18_010848) do
 
   create_table "fakers", force: :cascade do |t|
     t.string "email", null: false
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(version: 2019_05_16_180246) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_fakers_on_email"
+  end
+
+  create_table "faketweets", force: :cascade do |t|
+    t.string "source"
+    t.text "body"
+    t.integer "retweets"
+    t.integer "favorites"
+    t.text "tweet_time"
+    t.integer "fake_outs"
+    t.integer "faker_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["faker_id"], name: "index_faketweets_on_faker_id"
   end
 
   create_table "users", force: :cascade do |t|
