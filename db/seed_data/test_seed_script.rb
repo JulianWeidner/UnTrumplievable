@@ -14,5 +14,18 @@ files.each do |f_path|
   file = File.open(f_path)
   json_data = JSON.load(file)
 
-  print json_data.keys
+  tweets.each do |tweet|
+
+
+
+    create_table "tweets", force: :cascade do |t|
+      t.string "source"
+      t.text "body"
+      t.datetime "created_at", null: false
+      t.integer "retweets"
+      t.integer "favorites"
+      t.integer "unbelievables"
+      t.datetime "updated_at", null: false
+    end
+
 end
