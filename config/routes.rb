@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root :to => 'fakers#index'
+  root :to => 'static#index'
   resources :faker_sessions
   resources :fakers
   
