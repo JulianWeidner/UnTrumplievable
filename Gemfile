@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'quick_random_records', '~> 0.3.1'
 #user
 gem 'sorcery', '~> 0.9.1'
 
