@@ -3,6 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+#twbs for rails
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
+#efficently pulls random records
 gem 'quick_random_records', '~> 0.3.1'
 #user
 gem 'sorcery', '~> 0.9.1'

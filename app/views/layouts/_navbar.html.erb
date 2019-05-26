@@ -1,12 +1,18 @@
-<div id="nav">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item"><%=link_to "Play", play_path %></li>
+    
   <% if current_user %>
-    <%= link_to "Edit Profile", edit_faker_path(current_user.id) %>
-    <%= link_to "Logout", :logout, method: :post %>
+      <li class="nav-item"><%= link_to "Fake-A-Tweet", faker_path(current_user.id)%></li>
+      <li class="nav-item"><%= link_to "Account", edit_faker_path(current_user.id) %></li>
+      <li class="nav-item"><%= link_to "Logout", :logout, method: :post %></li>
   <% else %>
-    <%= link_to "Register", new_faker_path %> |
-    <%= link_to "Login", :login %>
+      <li class="nav-item"><%= link_to "Register", new_faker_path %></li>
+      <li class="nav-item"><%= link_to "Login", :login %></li>
+  </ul>
   <% end %>
-</div>
+ 
+</nav>
 
 <div>
   <p id="notice"><%= flash[:notice] %></p>
