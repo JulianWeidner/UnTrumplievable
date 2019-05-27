@@ -1,8 +1,18 @@
+<!--tweet-->
 <div>
-  <%= @tweet.body %>
+  <p><%= @tweet.body %><p>
+  <p>retweets: <%= @tweet.retweets %></p>
+  <p>Likes: <%= @tweet.favorites %></p>
 </div>
+
+<!--play buttons-->
 <div>
-  <% @fakebool %>
-  <button>Real</button>
-  <button>Fake</button>
+  <%= button_to "Real", play_path,params: {choice: 'real' },  method: :post %>
+  <%= button_to "Fake", play_path, params: {choice: 'fake' }, method: :post %>
 </div>
+
+<% if @outcome %>
+  <p>correct<p>
+<%else%>
+  <p>wrong!</p>
+<%end%>

@@ -14,6 +14,6 @@ Rails.application.routes.draw do
 
   #play
   get 'play', to: 'play#play'
-
+  post 'play', to: 'play#comparison'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

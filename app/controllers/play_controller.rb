@@ -5,6 +5,29 @@ class PlayController < ApplicationController
     @tweet = random_tweet
   end
 
+  #takes users choice via hidden params via button_to
+  def faker_choice
+    @choice = params[:choice]
+  end
+
+  def comparison
+    puts "called comparision"
+    if @isFake == true && @choice == 'fake' #isFake is true because its a fake tweet
+      #correct
+      @outcome = true
+      @tweet = random_tweet
+      puts 'correct'
+    elsif @isFake == false && @choice == 'real' #isFake is false because its a real tweet
+      #correct 
+      @outcome = true
+      @tweet = random_tweet
+      puts 'correct' + @isFake.to_s
+    else
+      @outcome = false
+      @tweet = random_tweet
+      puts 'false' + @isFake.to_s
+    end
+  end
   #returns a random real tweet using the Tweet.id.
   #because these are not really changed, I think this method will work. Only time will tell
   def random_real
@@ -29,11 +52,12 @@ class PlayController < ApplicationController
     #faketweet = random_fake #no need to create objects unless it fits if condition
     #realtweet = random_real #no need to create objects unless it fits if condition
     rand_num = random_num_spread
-    if rand_num <= 5.5 
-      @fakebool = true
+    print rand_num
+    if rand_num < 5.5 
+      @isFake = true
       return random_fake 
     elsif rand_num > 5.5
-      @fakebool = false
+      @isFake = false
       return random_real
     else
       return "error"
