@@ -5,7 +5,7 @@ ruby '2.5.1'
 
 gem 'quick_random_records', '~> 0.3.1'
 #user
-gem 'sorcery', '~> 0.9.1'
+gem 'sorcery', '~> 0.15.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
